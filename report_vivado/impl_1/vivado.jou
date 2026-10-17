@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 17 08:02:54 2026
+# Process ID         : 13664
+# Current directory  : D:/Workspace/Vivado/sdr_sdram/sdr_sdram.runs/impl_1
+# Command line       : vivado.exe -log sdr_ctrl.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source sdr_ctrl.tcl -notrace
+# Log file           : D:/Workspace/Vivado/sdr_sdram/sdr_sdram.runs/impl_1/sdr_ctrl.vdi
+# Journal file       : D:/Workspace/Vivado/sdr_sdram/sdr_sdram.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-4C0B8LJ
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 34029 MB
+# Swap memory        : 13958 MB
+# Total Virtual      : 47987 MB
+# Available Virtual  : 18530 MB
+#-----------------------------------------------------------
+source sdr_ctrl.tcl -notrace

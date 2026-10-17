@@ -1,0 +1,364 @@
+
+*** Running vivado
+    with args -log sdr_ctrl.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source sdr_ctrl.tcl
+
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sat Oct 17 08:02:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source sdr_ctrl.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/Workspace/Vivado/sdr_sdram/sdr_sdram.srcs/utils_1/imports/synth_1/sdr_ctrl.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Workspace/Vivado/sdr_sdram/sdr_sdram.srcs/utils_1/imports/synth_1/sdr_ctrl.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top sdr_ctrl -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1320
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1316.910 ; gain = 468.934
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sdr_ctrl' [D:/Workspace/EE5303/rtl/sdr_ctrl.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'sdr_ctrl_core' [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:9]
+	Parameter DATA_W bound to: 32'sb00000000000000000000000000010000 
+	Parameter BANK_W bound to: 32'sb00000000000000000000000000000010 
+	Parameter ROW_W bound to: 32'sb00000000000000000000000000001100 
+	Parameter COL_W bound to: 32'sb00000000000000000000000000001000 
+	Parameter T_RCD bound to: 32'sb00000000000000000000000000000010 
+	Parameter T_RP bound to: 32'sb00000000000000000000000000000010 
+	Parameter T_RAS bound to: 32'sb00000000000000000000000000000100 
+	Parameter T_RFC bound to: 32'sb00000000000000000000000000000011 
+	Parameter T_MRD bound to: 32'sb00000000000000000000000000000010 
+	Parameter T_XSR bound to: 32'sb00000000000000000000000000000011 
+	Parameter T_REFI bound to: 32'sb00000000000000000000000001000000 
+	Parameter T_POR bound to: 32'sb00000000000000000000000000000100 
+	Parameter T_CL bound to: 32'sb00000000000000000000000000000010 
+	Parameter BL_ENC bound to: 0 - type: integer 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:334]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:342]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:844]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:847]
+INFO: [Synth 8-6155] done synthesizing module 'sdr_ctrl_core' (0#1) [D:/Workspace/EE5303/rtl/sdr_ctrl_core.sv:9]
+INFO: [Synth 8-226] default block is never used [D:/Workspace/EE5303/rtl/sdr_ctrl.sv:437]
+INFO: [Synth 8-6155] done synthesizing module 'sdr_ctrl' (0#1) [D:/Workspace/EE5303/rtl/sdr_ctrl.sv:24]
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_bvalid driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_bresp[1] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_bresp[0] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_rvalid driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_rresp[1] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_rresp[0] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_pready driven by constant 1
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_pslverr driven by constant 0
+WARNING: [Synth 8-7129] Port axi_s_awsize[2] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awsize[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awsize[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awburst[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awburst[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wstrb[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wstrb[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wlast in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[2] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arburst[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arburst[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_paddr[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_paddr[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_pwdata[15] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_pwdata[14] in module sdr_ctrl is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1435.180 ; gain = 587.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1435.180 ; gain = 587.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1435.180 ; gain = 587.203
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1435.180 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Workspace/Vivado/sdr_sdram/sdr_sdram.srcs/constrs_1/new/constraint.xdc]
+Finished Parsing XDC File [D:/Workspace/Vivado/sdr_sdram/sdr_sdram.srcs/constrs_1/new/constraint.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1535.121 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1535.121 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1535.121 ; gain = 687.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1535.121 ; gain = 687.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1535.121 ; gain = 687.145
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sdr_ctrl_core'
+INFO: [Synth 8-802] inferred FSM for state register 'init_step_reg' in module 'sdr_ctrl_core'
+INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'sdr_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_INIT |                             1000 |                             0000
+                  S_IDLE |                             0001 |                             0001
+                   S_PRE |                             0100 |                             1001
+                   S_SRE |                             0101 |                             0101
+                  S_PPDE |                             0010 |                             0100
+                   S_MRS |                             0000 |                             0011
+                   S_REF |                             0011 |                             0010
+                   S_ACT |                             0111 |                             0110
+                  S_APDE |                             1001 |                             0111
+                 S_WR_RD |                             0110 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sdr_ctrl_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 IST_POR |                              100 |                              000
+                IST_PREA |                              011 |                              001
+                IST_REF0 |                              010 |                              010
+                IST_REF1 |                              000 |                              011
+                 IST_MRS |                              001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'init_step_reg' using encoding 'sequential' in module 'sdr_ctrl_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1535.121 ; gain = 687.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               23 Bit    Registers := 2     
+	               16 Bit    Registers := 4     
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 5     
+	                8 Bit    Registers := 5     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 7     
+	   4 Input   32 Bit        Muxes := 4     
+	   2 Input   23 Bit        Muxes := 2     
+	   2 Input   22 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 4     
+	  10 Input   16 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 1     
+	   4 Input   12 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 2     
+	   6 Input   12 Bit        Muxes := 1     
+	   5 Input   12 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 26    
+	   3 Input    4 Bit        Muxes := 2     
+	  10 Input    4 Bit        Muxes := 2     
+	  43 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 10    
+	  10 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 90    
+	   4 Input    1 Bit        Muxes := 3     
+	  10 Input    1 Bit        Muxes := 6     
+	   3 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_bresp[1] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_bresp[0] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_rresp[1] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port axi_s_rresp[0] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_prdata[15] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_prdata[14] driven by constant 0
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_pready driven by constant 1
+WARNING: [Synth 8-3917] design sdr_ctrl has port apb_s_pslverr driven by constant 0
+WARNING: [Synth 8-7129] Port axi_s_awsize[2] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awsize[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awsize[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awburst[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_awburst[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wstrb[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wstrb[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_wlast in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[2] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arsize[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arburst[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_s_arburst[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_paddr[1] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_paddr[0] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_pwdata[15] in module sdr_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port apb_s_pwdata[14] in module sdr_ctrl is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1567.176 ; gain = 719.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1629.539 ; gain = 781.562
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1764.906 ; gain = 916.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1764.906 ; gain = 916.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    95|
+|3     |LUT1   |     2|
+|4     |LUT2   |   129|
+|5     |LUT3   |   147|
+|6     |LUT4   |   239|
+|7     |LUT5   |   186|
+|8     |LUT6   |   236|
+|9     |MUXF7  |     4|
+|10    |FDCE   |   651|
+|11    |FDPE   |     4|
+|12    |IBUF   |   116|
+|13    |IOBUF  |    16|
+|14    |OBUF   |    72|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1908.445 ; gain = 960.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1908.445 ; gain = 1060.469
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1917.621 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1921.312 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+
+Synth Design complete | Checksum: 6ee6b87
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1921.312 ; gain = 1271.324
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1921.312 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Workspace/Vivado/sdr_sdram/sdr_sdram.runs/synth_1/sdr_ctrl.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file sdr_ctrl_utilization_synth.rpt -pb sdr_ctrl_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 17 08:02:47 2026...

@@ -1,0 +1,107 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sat Oct 17 08:03:26 2026
+| Host         : DESKTOP-4C0B8LJ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file sdr_ctrl_control_sets_placed.rpt
+| Design       : sdr_ctrl
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    29 |
+|    Minimum number of control sets                        |    29 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    53 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    29 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     5 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    19 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              40 |           23 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             619 |          180 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |            Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | u_core/p_20_in                      | u_core/rst_n     |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG | u_core/rd_burst_active_reg_0[0]     | u_core/rst_n     |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | u_core/aw_cap_valid_reg_5[0]        | u_core/rst_n     |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | u_core/core_req_valid               | u_core/rst_n     |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | u_core/cur_row                      | u_core/rst_n     |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | u_core/open_row_bank[3][11]_i_1_n_0 | u_core/rst_n     |                6 |             12 |         2.00 |
+|  clk_IBUF_BUFG | u_core/open_row_bank[2][11]_i_1_n_0 | u_core/rst_n     |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | u_core/open_row_bank[0][11]_i_1_n_0 | u_core/rst_n     |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | u_core/open_row_bank[1][11]_i_1_n_0 | u_core/rst_n     |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG | row_act_addr0                       | u_core/rst_n     |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG | u_core/rdata_capture0               | u_core/rst_n     |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG | u_core/E[0]                         | u_core/rst_n     |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG | u_core/axi_state_reg[1][0]          | u_core/rst_n     |                7 |             16 |         2.29 |
+|  clk_IBUF_BUFG | u_core/cur_wr50_out                 | u_core/rst_n     |                4 |             26 |         6.50 |
+|  clk_IBUF_BUFG | u_core/rd_addr_next_r               | u_core/rst_n     |               12 |             30 |         2.50 |
+|  clk_IBUF_BUFG | u_core/wr_addr_next_r               | u_core/rst_n     |               11 |             30 |         2.73 |
+|  clk_IBUF_BUFG | u_core/rcd_cnt[31]_i_1_n_0          | u_core/rst_n     |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | u_core/refi_cnt[31]_i_1_n_0         | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/sel                          | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/col_cnt                      | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/doing_ref                    | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/mrd_cnt                      | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/ras_cnt[1][0]_i_1_n_0        | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/ras_cnt[0][0]_i_1_n_0        | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/ras_cnt[2][0]_i_1_n_0        | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/ras_cnt[3][0]_i_1_n_0        | u_core/rst_n     |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_core/ar_cap_valid_reg[0]          | u_core/rst_n     |               14 |             35 |         2.50 |
+|  clk_IBUF_BUFG | u_core/wr_burst_active_reg[0]       | u_core/rst_n     |               12 |             35 |         2.92 |
+|  clk_IBUF_BUFG |                                     | u_core/rst_n     |               23 |             40 |         1.74 |
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
+
+
