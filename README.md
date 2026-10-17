@@ -1,54 +1,57 @@
 *Ho Chi Minh City University of Technology - Vietnam National University, Ho Chi Minh City*
 
-*Học kì 221 - Năm học 2022-2023*
-# Logic Design Project
+*Semester 261, 2026-2027*
+# EE5303 Assignment
+
+## SDR SDRAM Controller
+
 <ul>
-<li>Hội đồng : Đồ án thiết kế luận lí 6</li>
-<li>Giảng viên hướng dẫn : ThS. Đoàn Minh Vững </li>
-<li>Thư kí hội đồng: Huỳnh Hoàng Kha</li>
+<li>Supervising lecturer: Truong Quang Vinh</li>
 </ul>
 
-## Sinh viên thực hiện:
+## List of participating students
 | Name | ID |
 | :---- | :----: |
-| Nguyễn Ngọc Trí | 2012286 |
+| Nguyen Viet Hoang | 2670164 |
+| Nguyen Kim Ngoc Vy | 2670192 |
+| Nguyen Ngoc Tri | 2670815 |
+| Do Thanh Minh | 2670170 |
 
-## File github:
-Folder STM32: Chứa code để nạp vào vi mạch tích hợp vi điều khiển STM32F103RB. <br>
-Cấu trúc các file source code:
-| File | Chức năng |
-| :---- | :---- | 
-| button.h và button.c | Cấu trúc thực hiện chức năng nút nhấn |
-| software_timer.h và software_timer.c | Cấu trúc thực hiện chức năng quản lí thời gian các task timer |
-| lcd1602.h và lcd1602.c | Cấu trúc lập trình Led LCD 1602 |
-| rtc.h và rtc.c | Cấu trúc lập trình xử lí dữ liệu thời gian thực |
-| global.h và global.c | Chứa danh sách các cấu trúc, các biến, các trạng thái |
-| fsm_clock.h và fsm_clock.c | Lập trình máy trạng thái thực hiện các tính năng của đồng hồ |
-| main.h và main.c | File chạy chương trình chính |
+## About
+Implement a basic SDR SDRAM controller with input signals compliant with AXI and APB connection standards, and output signals following the SDR SDRAM architecture standard.
 
-## Cấu hình STM32F103RB:
-*RCC*: HSE và LSE ở chế độ Crystal / Ceramic Resonator. Sử dụng thạch anh ngoại HSE 62.5 kHZ. <br>
-*Tần số*: 64 MHz. <br>
-*Time tick cycle*: 10ms. <br>
-*SYS*: Serial Wire. <br>
-*RTC*: Activate Clock Source và Activate Calendar. <br>
-*TIM2*: Prescaler - 63999, Counter Period - 9. <br>
-*TIM3*: Prescaler - 639, Counter Period - 99. <br>
+Below is the system architecture diagram as well as the UVM architecture.
+<img width="2452" height="1093" alt="SDR SDRAM Controller-SDR SDRAM Controller Architecture drawio" src="https://github.com/user-attachments/assets/0d05bf28-2c9b-48ad-99ae-966e358ba8a7" />
+<img width="2493" height="1853" alt="SDR SDRAM Controller-UVM Architecture drawio" src="https://github.com/user-attachments/assets/85ed8259-0e0d-433c-9b5d-55f41c48f8b4" />
 
-*Sơ đồ các chân*:
-| Chân | Loại chân | Tên chân | Chức năng |
-| :---- | :----: | :----: | :---- |
-| PA6 | TIM3_CH1 | | Config signal buzzer |
-| PC5 | Output | | D4-LCD |
-| PC6 | Output | | D5-LCD |
-| PC8 | Output | | D6-LCD |
-| PC9 | Output | | D7-LCD |
-| PB8 | Output | | EN-LCD |
-| PB9 | Output | | RS-LCD |
-| PC7 | Input - Pullup | MODE | Mode |
-| PA9 | Input - Pullup | START_UP | Start (Mode 2) or Up (Mode 3) |
-| PA8 | Input - Pullup | STOP_DOWN | Stop (Mode 2) or Down (Mode 3) |
-| PB10 | Input - Pullup | SAVE_SET | Save (Mode 2) or Set (Mode 3) |
-| PB4 | Input - Pullup | CLEAR | Clear buzzer, clear value |
-| PB5 | Input - Pullup | MEMCALL | Memcall (Mode 2) |
+## File structure
+
+<ul>
+  <li>intf</li>
+  <ul>
+    <li>Interfaces: axi_if, apb_if, and sdr_sdram_if</li>
+    <li>sdr_bfm_pkg: A package containing tasks and functions used to control the interfaces for each command and specific functionality. This package is used to write testbenches or verification tests in the UVM environment</li>
+  </ul>
+  <li>rtl</li>
+  <ul>
+    <li>sdr_ctrl: The top-level module of the SDR SDRAM controller</li>
+    <li>sdr_ctrl_core: The core module inside sdr_ctrl, handling the main tasks of the controller</li>
+    <li>sdr_sdram_model: A basic SDRAM (memory) model, used only for checking controller operation, testbench validation, or debugging</li>
+  </ul>
+  <li>tb: Contains testbenches (files with _tb suffix) used to verify RTL functionality</li>
+  <li>uvm: Contains all files that implement the UVM architecture for SDR SDRAM verification purposes</li>
+  <li>capture: Stores images of important report contents with timestamps</li>
+</ul>
+
+## Steps to add files in Vivado
+
+<ul>
+  <li>Create a Vivado project and select a suitable part/board with sufficient resources</li>
+  <li>Add rtl files to the Design section</li>
+  <li>Add files from the intf and tb folders to the Simulation section</li>
+  <li>Create a basic constraint file</li>
+  Example: create_clock -period 10.000 -name clk [get_ports clk]
+  <li>Run simulation, synthesis, or implementation</li>
+</ul>
+<img width="539" height="765" alt="Screenshot 2026-10-17 084747" src="https://github.com/user-attachments/assets/92a3b85d-d5b2-4738-b6c5-10134d0c80db" />
 
